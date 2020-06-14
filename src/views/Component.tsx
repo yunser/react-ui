@@ -10,7 +10,7 @@ import React, { useState, useEffect, ReactNode } from 'react'
 // import classNames from 'classnames'
 import { Link, Button, AppBar, ToolBar, Checkbox, List, Divider,
     Icon, Table, Drawer, Select, IconButton, SubHeader, Fab, Empty, Toast, Dialog, Menu, Switch, Paper, Tooltip,
-    Slider, Tab, Radio } from '../ui'
+    Slider, Tab, Radio, Progress } from '../ui'
 import { SimplePage, ComponentPage } from '../components'
 
 import { Text } from '../ui/config-provider'
@@ -235,6 +235,14 @@ function RadioDemo() {
     )
 }
 
+function ProgressDemo() {
+    return (
+        <div>
+            <Progress value={40} />
+        </div>
+    )
+}
+
 export default function Component(props: any) {
 
     // const {Provider, Consumer} = React.createContext({
@@ -259,6 +267,11 @@ export default function Component(props: any) {
             </PageFab>
             {/* <GlobalStyle /> */}
             <Container>
+                Progress
+                <Box>
+                    <ProgressDemo />
+                </Box>
+
                 Radio
                 <Box>
                     <RadioDemo />
