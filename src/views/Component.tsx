@@ -10,7 +10,7 @@ import React, { useState, useEffect, ReactNode } from 'react'
 // import classNames from 'classnames'
 import { Link, Button, AppBar, ToolBar, Checkbox, List, Divider,
     Icon, Table, Drawer, Select, IconButton, SubHeader, Fab, Empty, Toast, Dialog, Menu, Switch, Paper, Tooltip,
-    Slider, Tab, Radio, Progress } from '../ui'
+    Slider, Tab, Radio, Progress, Skeleton, Pagination } from '../ui'
 import { SimplePage, ComponentPage } from '../components'
 
 import { Text } from '../ui/config-provider'
@@ -243,6 +243,24 @@ function ProgressDemo() {
     )
 }
 
+function SkeletonDemo() {
+    return (
+        <div>
+            <Skeleton width={160} height={80} />
+            <Skeleton shape="circle" width={40} height={40} />
+        </div>
+    )
+}
+
+function PaginationDemo() {
+    const [ page, setPage ] = useState(3)
+    return (
+        <div>
+            <Pagination page={page} totalPage={10} onChange={page => setPage(page)} />
+        </div>
+    )
+}
+
 export default function Component(props: any) {
 
     // const {Provider, Consumer} = React.createContext({
@@ -267,6 +285,16 @@ export default function Component(props: any) {
             </PageFab>
             {/* <GlobalStyle /> */}
             <Container>
+                Pagination
+                <Box>
+                    <PaginationDemo />
+                </Box>
+
+                Skeleton
+                <Box>
+                    <SkeletonDemo />
+                </Box>
+
                 Progress
                 <Box>
                     <ProgressDemo />
