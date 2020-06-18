@@ -2,7 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 interface RadioProps {
-    value: any
+    value?: any
+    checked?: boolean
+    onChange?: (checked: boolean) => void
 }
 
 const Root = styled.div`
@@ -38,11 +40,16 @@ const In = styled.div`
 `
 
 export function Radio(props: RadioProps) {
-    const { value } = props
+    const { value, checked = false, onChange } = props
+    console.log('value', value)
     return (
-        <Root>
+        <Root onClick={() => {
+            onChange && onChange(!checked)
+        }}>
             <Out>
-                <In />
+                {checked &&
+                    <In />
+                }
             </Out>
         </Root>
     )

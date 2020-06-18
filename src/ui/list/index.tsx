@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 // import { Theme, defaultTheme } from '../styles'
 import { Icon } from '../icon'
-import { Link } from '../link'
+import { Link } from '../router-link'
 import { themeColor } from '../styles'
 
 interface ListProps {

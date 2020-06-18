@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { propsColor, propsZIndexByKey, propsShadowByKey } from '../styles'
 
@@ -13,27 +13,33 @@ interface ButtonProps {
     style?: any // TODO
     ref?: any // TOOD
     forwardRef?: any
+    disabled?: boolean
 }
 
 const ButtonWrap = styled.div<ButtonProps>`
     display: inline-block;
     /* border: 1px solid #000; */
-    color: #fff;
-    background-color: ${props => propsColor(props)};
-    box-shadow: ${props => propsShadowByKey(props, 'button')};
-    padding: 10px;
+    color: ${props => props.disabled ? 'rgba(0, 0, 0, 0.26)' : '#fff'};
+    background-color: ${props => props.disabled ? 'rgba(0, 0, 0, 0.12)' : propsColor(props)};
+    box-shadow: ${props => props.disabled ? 'none' : propsShadowByKey(props, 'button')};
+    /* padding: 10px; */
     padding: 6px 16px;
     min-width: 64px;
-    cursor: pointer;
+    cursor: ${props => props.disabled ? 'default' : 'pointer'};
     /* font-size: 16px; */
     font-size: 14px;
+    line-height: 24px;
     border-radius: 2px;
     &:hover {
         /* color: #31c27c; */
         /* background-color: # */
-        opacity: .8;
+        opacity: ${props => props.disabled ? 1 : 0.8};
     }
     user-select: none;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    min-height: 36px;
 `
 
 // const IconButtonWrap = styled(Button)`

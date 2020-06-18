@@ -169,7 +169,7 @@ export function SimplePage(props: SimplePageProps) {
             <Content style={{ paddingLeft: (sideVisible && sideType === 'fixedSide') ? side_width : 0}}>
                 {children}
             </Content>
-            <Drawer open={sideVisible && sideType === 'drawer'} onClose={() => { setSideVisible(false) }}>
+            <Drawer visible={sideVisible && sideType === 'drawer'} onClose={() => { setSideVisible(false) }}>
                 {SideContent}
             </Drawer>
         </PageWrap>

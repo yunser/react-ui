@@ -2,11 +2,13 @@ import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import { propsShadowByKey } from '../styles'
 // import { Theme, defaultTheme } from '../styles'
+import { Modal } from '../modal'
 
 interface DrawerProps {
     children?: ReactNode
-    open?: boolean
+    visible?: boolean
     onClose?: Function
+    placement?: string
 }
 
 const DrawerWrap = styled.div<DrawerProps>`
@@ -43,8 +45,14 @@ const Mask = styled.div`
 `
 
 export function Drawer(props: DrawerProps) {
-    const { children, open = true, onClose } = props
+    const { children, visible: open = true, onClose } = props
     return (
+        // <Modal
+        //     visible={true}
+        //     onClose={onClose}
+        // >
+        //     1234
+        // </Modal>
         <DrawerWrap {...props}>
             {open &&
                 <Mask onClick={() => {onClose && onClose() }} />

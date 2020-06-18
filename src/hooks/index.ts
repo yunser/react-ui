@@ -1,5 +1,8 @@
 import { useState, useEffect, useLayoutEffect, useCallback } from "react"
 
+// TODO
+/* eslint-disable */
+
 export function useInterval(handler: (...args: any[]) => void, timeout: number) {
     useEffect(() => {
         let timerId = setInterval(handler, timeout)
@@ -78,6 +81,7 @@ export function useDocSize(callback?: Function) {
         })
         callback && callback()
     }, [])
+    
     useEffect(() => {
         window.addEventListener('resize', onResize)
         return () => {

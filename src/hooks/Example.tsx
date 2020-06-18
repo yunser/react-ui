@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useLayoutEffect } from 'react'
+import React, { useRef, useEffect, useLayoutEffect } from 'react'
 import { useInterval, useTitle, useEvent, useHover } from './index'
 
 export function Example() {
@@ -32,7 +32,7 @@ export function Example() {
     
 
 
-    const [ hovered, setHovered ] = useHover(elRef)
+    const [ hovered ] = useHover(elRef)
 
     return (
         <div>

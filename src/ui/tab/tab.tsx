@@ -1,4 +1,4 @@
-import React, { ReactNode, Children } from 'react'
+import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 
 const Root = styled.div`
@@ -24,7 +24,7 @@ const ItemRoot = styled.div`
 `
 
 function Item(props: ItemProps) {
-    const { value, selected = false, onClick, style, children } = props
+    const { selected = false, onClick, children } = props
 
     return (
         <ItemRoot onClick={onClick} style={{ borderBottom: selected ? '2px solid #f00' : 'none'}}>{children}</ItemRoot>

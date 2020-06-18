@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from '../ui'
 import { SimplePage } from '../components'
 
-class About extends Component {
+export default class About extends Component {
     render() {
         return (
             <SimplePage title="关于">
@@ -12,5 +12,3 @@ class About extends Component {
         )
     }
 }
-
-export default About

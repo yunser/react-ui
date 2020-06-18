@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react'
 
+// TODO
+/* eslint-disable */
+
 let map: any = {}
 let values: any = {}
 let callbacks: any = {}
