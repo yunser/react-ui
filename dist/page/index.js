@@ -70,12 +70,12 @@ function useDocSize() {
     return size;
 }
 function SimplePage(props) {
-    var title = props.title, children = props.children, action = props.action;
+    var title = props.title, children = props.children, action = props.action, side = props.side;
     var docSize = useDocSize();
     var _a = react_1.useState(docSize.width >= 800), sideVisible = _a[0], setSideVisible = _a[1];
     var sideType = docSize.width >= 1000 ? 'fixedSide' : 'drawer';
     // const [ count, setCount ] = useStore(0, 'count')
-    var SideContent = (react_1.default.createElement("div", null,
+    var SideContent = side || (react_1.default.createElement("div", null,
         react_1.default.createElement(SideHeader, null,
             react_1.default.createElement(HeaderImage, { src: "https://icons.yunser.com/icons/app.svg" })),
         react_1.default.createElement(__1.List, null,
@@ -104,7 +104,7 @@ function SimplePage(props) {
                     react_1.default.createElement(ToolBarRight, null, action)))),
         react_1.default.createElement(Side, { style: { left: (sideVisible && sideType === 'fixedSide') ? 0 : (-side_width) } }, SideContent),
         react_1.default.createElement(Content, { style: { paddingLeft: (sideVisible && sideType === 'fixedSide') ? side_width : 0 } }, children),
-        react_1.default.createElement(__1.Drawer, { open: sideVisible && sideType === 'drawer', onClose: function () { setSideVisible(false); } }, SideContent)));
+        react_1.default.createElement(__1.Drawer, { visible: sideVisible && sideType === 'drawer', onClose: function () { setSideVisible(false); } }, SideContent)));
 }
 exports.SimplePage = SimplePage;
 var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7;

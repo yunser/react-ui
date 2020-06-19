@@ -5,6 +5,7 @@ interface ButtonProps {
     color?: string;
     big?: boolean;
     checked?: boolean;
+    onChange?: (checked: boolean) => void;
 }
 export declare function Checkbox(props: ButtonProps): JSX.Element;
 export {};

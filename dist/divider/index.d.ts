@@ -1,2 +1,1 @@
-/// <reference types="react" />
-export declare function Divider(): JSX.Element;
+export * from './divider';

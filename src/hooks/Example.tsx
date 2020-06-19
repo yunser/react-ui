@@ -51,7 +51,7 @@ export function Example() {
             num: {num}
             <div>
                 <button onClick={() => {
-                    setNum(num + 1)
+                    // setNum(num + 1)
                 }}>+1</button>
             </div>
         </div>

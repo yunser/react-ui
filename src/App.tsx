@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
 // page
-import Home from './views/Home'
+// import Home from './views/Home'
 import About from './views/About'
 import Login from './views/Login'
 import ComponentHome from './views/ComponentHome'
@@ -39,8 +39,8 @@ import ComponentDate from './views/components/DatePicker'
 import ComponentColor from './views/components/Color'
 import ComponentRate from './views/components/Rate'
 import ComponentUploader from './views/components/Uploader'
+import ComponentArea from './views/components/Area'
 
-import Editor from './views/Editor'
 import Start from './views/Start'
 
 import { ThemeProvider } from "styled-components";
@@ -49,24 +49,24 @@ import { defaultTheme } from './ui/styles'
 import './App.css' // TODO
 import { ConfigProvider } from './ui'
 
-const routers = [
-    {
-        path: '/',
-        component: Home
-    },
-    {
-        path: '/about',
-        component: About
-    },
-    {
-        path: '/start',
-        component: Start
-    },
-    // {
-    //     path: '/components/button',
-    //     component: Start
-    // },
-]
+// const routers = [
+//     {
+//         path: '/',
+//         component: Home
+//     },
+//     {
+//         path: '/about',
+//         component: About
+//     },
+//     {
+//         path: '/start',
+//         component: Start
+//     },
+//     // {
+//     //     path: '/components/button',
+//     //     component: Start
+//     // },
+// ]
 
 export default class App extends Component {
 
@@ -85,7 +85,6 @@ export default class App extends Component {
                             <Route path="/start" exact component={About} />
                             <Route path="/login" exact component={Login} />
                             <Route path="/components" exact component={ComponentOne} />
-                            <Route path="/editor" exact component={Editor} />
                             {/* <Route path="/components/:id" exact component={Components} /> */}
                             <Route path="/start" exact component={Start} />
 
@@ -121,6 +120,8 @@ export default class App extends Component {
                             <Route path="/components/color" exact component={ComponentColor} />
                             <Route path="/components/rate" exact component={ComponentRate} />
                             <Route path="/components/uploader" exact component={ComponentUploader} />
+                            <Route path="/components/error404" exact component={Component404} />
+                            <Route path="/components/area" exact component={ComponentArea} />
                             {/* <Route path="/components/*" exact component={Component404} /> */}
                         </div>
                     </BrowserRouter>

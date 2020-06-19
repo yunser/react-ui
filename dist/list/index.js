@@ -23,7 +23,7 @@ var react_1 = __importDefault(require("react"));
 var styled_components_1 = __importDefault(require("styled-components"));
 // import { Theme, defaultTheme } from '../styles'
 var icon_1 = require("../icon");
-var link_1 = require("../link");
+var router_link_1 = require("../router-link");
 var styles_1 = require("../styles");
 var ListWrap = styled_components_1.default.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    background: ", ";\n    /* background-color: #fff; */\n    padding: 8px 0;\n"], ["\n    background: ", ";\n    /* background-color: #fff; */\n    padding: 8px 0;\n"])), function (props) { return styles_1.themeColor(props.theme, { light: '#fff', dark: '#424242' }); });
 var hoverColor = 'rgba(0, 0, 0, .1)';
@@ -32,7 +32,7 @@ var ItemWrap = styled_components_1.default.div(templateObject_2 || (templateObje
 function Item(props) {
     var href = props.href, target = props.target, to = props.to, children = props.children;
     if (to || href) {
-        return (react_1.default.createElement(link_1.Link, { to: to, href: href, target: target },
+        return (react_1.default.createElement(router_link_1.Link, { to: to, href: href, target: target },
             react_1.default.createElement(ItemWrap, __assign({ onClick: function () {
                 } }, props), children)));
     }

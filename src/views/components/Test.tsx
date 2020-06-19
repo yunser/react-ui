@@ -1,7 +1,7 @@
 import React from 'react'
 import { Progress } from '../../ui'
 import { ComponentPage } from '../../components'
-import { H1, H2, Text, Demo, Code } from '../../ui-doc'
+import { H1, Demo } from '../../ui-doc'
 
 
 function TestDemo() {

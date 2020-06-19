@@ -1,4 +1,8 @@
 "use strict";
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -27,38 +31,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Link = void 0;
 var react_1 = __importDefault(require("react"));
-// import styled from 'styled-components'
-// import { Theme } from '../styles'
-var react_router_dom_1 = require("react-router-dom");
-// const AWrap = styled.a<LinkProps>`
-//     display: inline-block;
-//     color: ${props => {
-//         const theme: Theme = props.theme
-//         const defaultColor = '#f00'
-//         const themeType = props.theme.type === 'light' ? 'light' : 'dark'
-//         if (theme) {
-//             return theme.palatte.secondary[themeType] || defaultColor
-//         }
-//         return defaultColor
-//     }};
-//     cursor: pointer;
-//     /* font-size: 16px; */
-//     font-size: ${props => {
-//         return 20
-//     }}px;
-//     border-radius: 4px;
-//     &:hover {
-//         /* color: #31c27c; */
-//         /* background-color: # */
-//         opacity: .8;
-//     }
-// `
+var styled_components_1 = __importDefault(require("styled-components"));
+var AWrap = styled_components_1.default.a(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    display: inline-block;\n    color: #09c;\n    cursor: pointer;\n    /* font-size: 16px; */\n    &:hover {\n        /* color: #31c27c; */\n        /* background-color: # */\n        opacity: .8;\n    }\n"], ["\n    display: inline-block;\n    color: #09c;\n    cursor: pointer;\n    /* font-size: 16px; */\n    &:hover {\n        /* color: #31c27c; */\n        /* background-color: # */\n        opacity: .8;\n    }\n"])));
 function Link(props) {
-    var to = props.to, href = props.href, target = props.target, children = props.children, restProps = __rest(props, ["to", "href", "target", "children"]);
-    if (to) {
-        return react_1.default.createElement(react_router_dom_1.Link, { to: to, target: target }, children);
-    }
-    return react_1.default.createElement("a", __assign({ href: href, target: target }, restProps), children);
+    var href = props.href, target = props.target, children = props.children, className = props.className, restProps = __rest(props, ["href", "target", "children", "className"]);
+    return react_1.default.createElement(AWrap, __assign({ className: className, href: href, target: target }, restProps), children);
 }
 exports.Link = Link;
+var templateObject_1;
 //# sourceMappingURL=index.js.map

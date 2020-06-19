@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from '../ui'
+import { Link } from '../ui/router-link'
 
 export default class Login extends Component {
     render() {

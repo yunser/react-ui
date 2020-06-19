@@ -21,10 +21,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Table = void 0;
 var react_1 = __importDefault(require("react"));
 var styled_components_1 = __importDefault(require("styled-components"));
-var TableWrap = styled_components_1.default.table(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    border-collapse: collapse;\n"], ["\n    border-collapse: collapse;\n"])));
-var Th = styled_components_1.default.th(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n    border: 1px solid #000;\n"], ["\n    border: 1px solid #000;\n"])));
+var TableWrap = styled_components_1.default.table(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    border-collapse: collapse;\n    th {\n        padding: 8px 16px;\n        border: 1px solid #ddd;\n    }\n    td {\n        padding: 8px 16px;\n        border: 1px solid #ddd;\n    }\n"], ["\n    border-collapse: collapse;\n    th {\n        padding: 8px 16px;\n        border: 1px solid #ddd;\n    }\n    td {\n        padding: 8px 16px;\n        border: 1px solid #ddd;\n    }\n"])));
+var Th = styled_components_1.default.th(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n    border: 1px solid #ddd;\n"], ["\n    border: 1px solid #ddd;\n"])));
 var Tr = styled_components_1.default.tr(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n    /* border: 1px solid #000; */\n"], ["\n    /* border: 1px solid #000; */\n"])));
-var Td = styled_components_1.default.td(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n    border: 1px solid #000;\n"], ["\n    border: 1px solid #000;\n"])));
+var Td = styled_components_1.default.td(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n    border: 1px solid #ddd;\n"], ["\n    border: 1px solid #ddd;\n"])));
 function Table(props) {
     var children = props.children, columns = props.columns, _a = props.data, data = _a === void 0 ? [] : _a;
     return (react_1.default.createElement(TableWrap, __assign({}, props),

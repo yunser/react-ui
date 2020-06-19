@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from '../ui'
+import { Link } from '../ui/router-link'
 
 export interface App {
     icon?: string
@@ -34,6 +34,7 @@ const AppItemWrap = styled.div`
     width: 200px;
     margin-right: 16px;
     margin-bottom: 16px;
+    box-shadow: 0 1px 6px rgba(0,0,0,.118), 0 1px 4px rgba(0,0,0,.118);
     &:hover {
         background-color: rgba(0, 0, 0, .1);
     }
@@ -44,7 +45,6 @@ const AppLink = styled(Link)`
     width: 100%;
     height: 100%;
     padding: 8px;
-    box-shadow: 0 1px 6px rgba(0,0,0,.118), 0 1px 4px rgba(0,0,0,.118);
 `
 
 const AppImg = styled.img`

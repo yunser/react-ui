@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { propsColor, propsZIndexByKey, propsShadowByKey } from '../styles'
 
-interface ButtonProps {
+export interface ButtonProps {
     primary?: boolean
     children?: string | JSX.Element | JSX.Element[]
     color?: string

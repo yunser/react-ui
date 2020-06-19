@@ -32,7 +32,12 @@ export function MonthSelector(props: MonthSelectorProps) {
                         onClick={() => {
                             onChange && onChange(item)
                         }}
-                    >{item + 1}月</Item>
+                        style={{
+                            color: item === value ? '#f00' : '000'
+                        }}
+                    >
+                        {item + 1}月
+                    </Item>
                 )
             })}
         </List>

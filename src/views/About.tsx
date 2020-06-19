@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from '../ui'
+import { Link } from '../ui/router-link'
 import { SimplePage } from '../components'
 
 export default class About extends Component {

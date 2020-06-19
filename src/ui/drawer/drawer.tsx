@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 import { propsShadowByKey } from '../styles'
 // import { Theme, defaultTheme } from '../styles'
-import { Modal } from '../modal'
+// import { Modal } from '../modal'
 
 interface DrawerProps {
     children?: ReactNode

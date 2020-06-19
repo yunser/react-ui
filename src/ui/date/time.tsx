@@ -81,7 +81,7 @@ function Panel(props: PanelProps) {
 
     let weeks = '一二三四五六日'.split('')
 
-    let dates = [1, 2, 3]
+    // let dates = [1, 2, 3]
 
     let m = moment(value)
 

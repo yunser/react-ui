@@ -38,6 +38,9 @@ export function YearSelector(props: YearSelectorProps) {
                         onClick={() => {
                             onChange && onChange(item)
                         }}
+                        style={{
+                            color: item === value ? '#f00' : '000'
+                        }}
                     >{item}</Item>
                 )
             })}

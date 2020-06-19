@@ -1,5 +1,5 @@
 import React from 'react'
-import { Progress, Card } from '../../ui'
+import { Card } from '../../ui'
 import { ComponentPage } from '../../components'
 import { H1, H2, Text, Demo, Code } from '../../ui-doc'
 

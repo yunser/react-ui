@@ -1,7 +1,7 @@
 import React, { useState, useEffect, ReactNode } from 'react'
-import { Link, AppBar, ToolBar,
-    Icon, SubHeader, Fab,
-    } from '../ui'
+import { AppBar, Icon, SubHeader, Fab } from '../ui'
+
+import { Link } from '../ui/router-link'
 import { ComponentPage } from '../components'
 
 import { Text } from '../ui/config-provider'
@@ -71,7 +71,7 @@ function Dog() {
     }, [])
     return (
         <div>
-            🐶{num}
+            {num}
             <Box>
                 <button onClick={() => {
                     setNum(num + 1)
@@ -123,12 +123,12 @@ function StyleDiv(props: StyleDivProps) {
 
 function useStyle() {
     const style = document.createElement('style')
-    style.type = 'text/css'; 
-    style.innerHTML=".asd222{ color: #f00 }";
-    document.getElementsByTagName('head').item(0).appendChild(style)
+    style.type = 'text/css';
+    style.innerHTML=".asd222{ color: #f00 }"
+    document.getElementsByTagName('head')?.item(0)?.appendChild(style)
 }
 
-function objToStyleText(obj) {
+function objToStyleText(obj: any) { // TODO
     let results = []
     for (let name in obj) {
         results.push(`${name}: ${obj[name]}`)
@@ -141,7 +141,7 @@ function objToStyleText(obj) {
 function useClass(obj: any) {
 
     let styleText = ''
-    let classes = {}
+    let classes: any = {} // TODO
     for (let name in obj) {
         const uniqueClassName = `${name}-${new Date().getTime() + Math.floor(1000 * Math.random())}`
         styleText += `.${uniqueClassName} {${objToStyleText(obj[name])}}`
@@ -150,7 +150,7 @@ function useClass(obj: any) {
     const style = document.createElement('style')
     style.type = 'text/css'
     style.innerHTML = styleText
-    document.getElementsByTagName('head').item(0).appendChild(style)
+    document.getElementsByTagName('head')?.item(0)?.appendChild(style)
 
     return classes
 }

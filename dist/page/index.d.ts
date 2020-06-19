@@ -7,6 +7,7 @@ interface SimplePageProps {
     title: string;
     children?: ReactNode;
     action?: ReactNode;
+    side?: ReactNode;
 }
 export declare function SimplePage(props: SimplePageProps): JSX.Element;
 export {};

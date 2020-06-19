@@ -1,47 +1,14 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.themeColor = exports.propsColor = exports.defaultTheme = void 0;
-exports.defaultTheme = {
-    palatte: {
-        // type: 'light',
-        type: 'dark',
-        common: {
-            black: '#000',
-            white: '#fff',
-        },
-        primary: {
-            light: '#4285f4',
-            // light: '#999',
-            // light: '#f90',
-            dark: '#4285f4',
-        },
-        secondary: {
-            light: '#ff4081',
-            dark: '#4285f4',
-        }
-    }
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
 };
-function propsColor(props) {
-    var theme = props.theme;
-    if (theme) {
-        console.log('props.color', props.color);
-        var themeType = props.theme.palatte.type === 'light' ? 'light' : 'dark';
-        if (props.color === 'primary') {
-            return theme.palatte.primary[themeType];
-        }
-        else if (props.color === 'secondary') {
-            return theme.palatte.secondary[themeType];
-        }
-        else if (props.color) {
-            return props.color;
-        }
-    }
-    return '#999';
-}
-exports.propsColor = propsColor;
-function themeColor(theme, color) {
-    var themeType = theme.palatte.type === 'light' ? 'light' : 'dark';
-    return color[themeType];
-}
-exports.themeColor = themeColor;
+Object.defineProperty(exports, "__esModule", { value: true });
+__exportStar(require("./styles"), exports);
 //# sourceMappingURL=index.js.map

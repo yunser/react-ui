@@ -1,4 +1,14 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var button_1 = require("./button");
 Object.defineProperty(exports, "Button", { enumerable: true, get: function () { return button_1.Button; } });
@@ -22,8 +32,6 @@ var table_1 = require("./table");
 Object.defineProperty(exports, "Table", { enumerable: true, get: function () { return table_1.Table; } });
 var icon_1 = require("./icon");
 Object.defineProperty(exports, "Icon", { enumerable: true, get: function () { return icon_1.Icon; } });
-var page_2 = require("./page"); // TODO 移除
-Object.defineProperty(exports, "SimplePage", { enumerable: true, get: function () { return page_2.SimplePage; } });
 var drawer_1 = require("./drawer");
 Object.defineProperty(exports, "Drawer", { enumerable: true, get: function () { return drawer_1.Drawer; } });
 var subHeader_1 = require("./subHeader");
@@ -32,4 +40,44 @@ var empty_1 = require("./empty");
 Object.defineProperty(exports, "Empty", { enumerable: true, get: function () { return empty_1.Empty; } });
 var config_provider_1 = require("./config-provider");
 Object.defineProperty(exports, "ConfigProvider", { enumerable: true, get: function () { return config_provider_1.ConfigProvider; } });
+var toast_1 = require("./toast");
+Object.defineProperty(exports, "Toast", { enumerable: true, get: function () { return toast_1.Toast; } });
+var dialog_1 = require("./dialog");
+Object.defineProperty(exports, "Dialog", { enumerable: true, get: function () { return dialog_1.Dialog; } });
+var menu_1 = require("./menu");
+Object.defineProperty(exports, "Menu", { enumerable: true, get: function () { return menu_1.Menu; } });
+var switch_1 = require("./switch");
+Object.defineProperty(exports, "Switch", { enumerable: true, get: function () { return switch_1.Switch; } });
+var input_1 = require("./input");
+Object.defineProperty(exports, "Input", { enumerable: true, get: function () { return input_1.Input; } });
+Object.defineProperty(exports, "NumberInput", { enumerable: true, get: function () { return input_1.NumberInput; } });
+var text_field_1 = require("./text-field");
+Object.defineProperty(exports, "TextField", { enumerable: true, get: function () { return text_field_1.TextField; } });
+var container_1 = require("./container");
+Object.defineProperty(exports, "Container", { enumerable: true, get: function () { return container_1.Container; } });
+var select_1 = require("./select");
+Object.defineProperty(exports, "Select", { enumerable: true, get: function () { return select_1.Select; } });
+var tooltip_1 = require("./tooltip");
+Object.defineProperty(exports, "Tooltip", { enumerable: true, get: function () { return tooltip_1.Tooltip; } });
+var papper_1 = require("./papper");
+Object.defineProperty(exports, "Paper", { enumerable: true, get: function () { return papper_1.Paper; } });
+var slider_1 = require("./slider");
+Object.defineProperty(exports, "Slider", { enumerable: true, get: function () { return slider_1.Slider; } });
+var tab_1 = require("./tab");
+Object.defineProperty(exports, "Tab", { enumerable: true, get: function () { return tab_1.Tab; } });
+var radio_1 = require("./radio");
+Object.defineProperty(exports, "Radio", { enumerable: true, get: function () { return radio_1.Radio; } });
+var progress_1 = require("./progress");
+Object.defineProperty(exports, "Progress", { enumerable: true, get: function () { return progress_1.Progress; } });
+var skeleton_1 = require("./skeleton");
+Object.defineProperty(exports, "Skeleton", { enumerable: true, get: function () { return skeleton_1.Skeleton; } });
+var pagination_1 = require("./pagination");
+Object.defineProperty(exports, "Pagination", { enumerable: true, get: function () { return pagination_1.Pagination; } });
+var tag_1 = require("./tag");
+Object.defineProperty(exports, "Tag", { enumerable: true, get: function () { return tag_1.Tag; } });
+var card_1 = require("./card");
+Object.defineProperty(exports, "Card", { enumerable: true, get: function () { return card_1.Card; } });
+var avatar_1 = require("./avatar");
+Object.defineProperty(exports, "Avatar", { enumerable: true, get: function () { return avatar_1.Avatar; } });
+__exportStar(require("./date"), exports);
 //# sourceMappingURL=index.js.map
