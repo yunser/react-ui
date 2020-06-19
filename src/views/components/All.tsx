@@ -103,6 +103,10 @@ export default () => {
                     title: 'Rate',
                     url: '/components/rate',
                 },
+                {
+                    title: 'Uploader',
+                    url: '/components/uploader',
+                },
 
             ]} />
 
