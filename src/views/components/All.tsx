@@ -99,6 +99,10 @@ export default () => {
                     title: 'Color',
                     url: '/components/color',
                 },
+                {
+                    title: 'Rate',
+                    url: '/components/rate',
+                },
 
             ]} />
 

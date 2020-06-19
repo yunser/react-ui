@@ -37,6 +37,7 @@ import ComponentAvatar from './views/components/Avatar'
 import ComponentLink from './views/components/Link'
 import ComponentDate from './views/components/DatePicker'
 import ComponentColor from './views/components/Color'
+import ComponentRate from './views/components/Rate'
 
 import Editor from './views/Editor'
 import Start from './views/Start'
@@ -117,6 +118,7 @@ export default class App extends Component {
                             <Route path="/components/link" exact component={ComponentLink} />
                             <Route path="/components/time" exact component={ComponentDate} />
                             <Route path="/components/color" exact component={ComponentColor} />
+                            <Route path="/components/rate" exact component={ComponentRate} />
                             {/* <Route path="/components/*" exact component={Component404} /> */}
                         </div>
                     </BrowserRouter>

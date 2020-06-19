@@ -1,18 +1,16 @@
 import React, { useState } from 'react'
-import { ColorPicker } from '../../ui/color'
+import { Rate } from '../../ui/rate'
 import { ComponentPage } from '../../components'
 import { H1, H2, Text, Demo, Code } from '../../ui-doc'
 
-function ColorDemo() {
 
-    const [ color, setColor ] = useState({
-        hex: '#4092DB',
-        opacity: 40
-    })
+function RateDemo() {
+
+    const [ value, setValue ] = useState(3)
 
     return (
         <div>
-            <ColorPicker value={color} onChange={ value => setColor(value) } />
+            <Rate value={value} onChange={val => setValue(val)} />
         </div>
     )
 }
@@ -20,19 +18,19 @@ function ColorDemo() {
 export default () => {
 
     return (
-        <ComponentPage title="颜色">
-            <H1>Color 颜色</H1>
+        <ComponentPage title="评分">
+            <H1>Rate 评分</H1>
             <Text>xxx</Text>
 
             <H2>Import</H2>
 
-            <Code>{`Import { Skeleton } from '@yunser/react-ui/core'`}
+            <Code>{`Import { Rate } from '@yunser/react-ui/core'`}
             </Code>
 
             <H2>基本</H2>
 
             <Demo>
-                <ColorDemo />
+                <RateDemo />
             </Demo>
         </ComponentPage>
     )

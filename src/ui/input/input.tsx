@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-const Root = styled.div``
+const Root = styled.div`
+    display: inline-block;
+`
 
 const MyInput = styled.input<TextInputProps>`
     display: inline-block;
