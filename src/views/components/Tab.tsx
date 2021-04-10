@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
-import { Tab } from '../../ui'
+import React, { useState, lazy, Component, Suspense } from 'react'
+import { Tab, Table } from '../../ui'
 import { ComponentPage } from '../../components'
-import { H1, H2, Text, Demo, Code } from '../../ui-doc'
+import { H1, H2, Text, Demo, Code, PropTable } from '../../ui-doc'
+import {importMDX} from 'mdx.macro'
+
+const Content = lazy(() => importMDX('./Tab.mdx'))
 
 function TabDemo() {
     const [ value, setValue ] = useState('1')
@@ -26,6 +29,35 @@ function TabDemo() {
     )
 }
 
+const apiProps = [
+    {
+        name: 'value',
+        description: '当前选中项',
+        required: false,
+        type: 'string',
+    },
+    {
+        name: 'onChange',
+        description: '选中项变化回调',
+        required: false,
+        type: '(value: string) => void',
+    },
+    {
+        name: 'children',
+        required: true,
+        type: 'ReactNode',
+    },
+]
+
+const itemApiProps = [
+    {
+        name: 'value',
+        description: '值',
+        required: true,
+        type: 'string',
+    },
+]
+
 export default () => {
 
     return (
@@ -43,6 +75,20 @@ export default () => {
             <Demo>
                 <TabDemo />
             </Demo>
+
+            {/* <Suspense fallback={<div>Loading...</div>}>
+                <Content />
+            </Suspense> */}
+
+            <H2>属性</H2>
+            <PropTable
+                data={apiProps}>
+            </PropTable>
+
+            <H2>Item 属性</H2>
+            <PropTable
+                data={itemApiProps}>
+            </PropTable>
         </ComponentPage>
     )
 }

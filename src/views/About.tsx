@@ -6,7 +6,7 @@ export default class About extends Component {
     render() {
         return (
             <SimplePage title="关于">
-                这是关于页面
+                这是关于页面？？
                 <Link to="/">首页</Link>
             </SimplePage>
         )

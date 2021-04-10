@@ -4,11 +4,16 @@ import styled from "styled-components"
 
 const ToastsWrap = styled.div`
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
+    right: 0;
     z-index: 100000000;
     /* background: #f00; */
     padding: 16px;
+    display: flex;
+    flex-direction: column;
+    just-content: center;
+    align-items: center;
 `
 
 interface ToastProps {
@@ -41,14 +46,16 @@ const ToastWrap = styled.div<ToastProps>`
     height: 48px;
     padding: 0 16px;
     /* border: 1px solid #f00; */
-    color: #fff;
-    background-color: ${props => getBg(props)};
+    color: #333;
+    background-color: #fff;
     margin-top: 16px;
     display: flex;
     align-items: center;
     border-radius: 4px;
     box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12);
 `
+
+// background-color: ${props => getBg(props)};
 
 interface ToastsProps {
     ref?: any

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 const Root = styled.div`
     display: flex;
+    border-bottom: 1px solid rgba(0, 0, 0, .12);
 `
 
 interface ItemProps {
@@ -19,15 +20,15 @@ const ItemRoot = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
-    background: #09f;
+    color: #333;
+    // background: #09f;
 `
 
 function Item(props: ItemProps) {
     const { selected = false, onClick, children } = props
 
     return (
-        <ItemRoot onClick={onClick} style={{ borderBottom: selected ? '2px solid #f00' : 'none'}}>{children}</ItemRoot>
+        <ItemRoot onClick={onClick} style={{ borderBottom: selected ? '2px solid #f00' : '2px solid transparent'}}>{children}</ItemRoot>
     )
 }
 

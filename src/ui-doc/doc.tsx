@@ -1,18 +1,27 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import styled, {} from 'styled-components'
+import { Table } from '../ui'
+import { TableProps } from '../ui/table'
 
 export const H1 = styled.div`
     font-size: 40px;
-    font-weight: 400;
+    font-weight: bold;
     line-height: 1.167;
-    margin: 16px 0;
+    margin: 20px 0 16px 0;
 `
 
 export const H2 = styled.div`
-    margin: 40px 0 16px;
-    font-size: 30px;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    font-weight: 400;
+    margin: 36px 0 24px 0;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.235;
+    letter-spacing: 0.00735em;
+`
+
+export const H3 = styled.div`
+    margin: 24px 0 16px 0;
+    font-size: 24px;
+    font-weight: bold;
     line-height: 1.235;
     letter-spacing: 0.00735em;
 `
@@ -20,7 +29,24 @@ export const H2 = styled.div`
 export const Text = styled.div`
     margin-top: 0;
     margin-bottom: 16px;
+    font-size: 16px;
 `
+
+
+interface PProps {
+    children: ReactNode
+}
+
+export function Paragraph(props: PProps) {
+    const { children } = props
+    return (
+        <p data-ui="p" style={{
+            marginTop: 0,
+            marginBottom: 16,
+            fontSize: 16,
+        }}>{children}</p>
+    )
+}
 
 const BoxWrap = styled.div`
     position: relative;
@@ -64,6 +90,17 @@ const ActionItemWrap = styled.div`
     margin-right: 16px;
 `
 
+export const Ul = styled.ul`
+    margin-bottom: 16px;
+    padding-left: 16px;
+    font-size: 16px;
+`
+
+export const Li = styled.li`
+    margin-bottom: 8px;
+    font-size: 16px;
+`
+
 export function Display(props: ActionsProps) {
     const { children = [] } = props
 
@@ -79,5 +116,37 @@ export function Display(props: ActionsProps) {
                 children.map(ActionItem)
             }
         </ActionsWrap>
+    )
+}
+
+
+interface PropTableProps extends TableProps {
+
+}
+
+export function PropTable(props: PropTableProps) {
+    return (
+        <Table
+            columns={[
+                {
+                    title: '名称',
+                    dataKey: 'name',
+                },
+                {
+                    title: '说明',
+                    dataKey: 'description',
+                },
+                {
+                    title: '必须',
+                    dataKey: 'required',
+                    render(value) {
+                        return (
+                            <div>{value ? '是' : '否'}</div>
+                        )
+                    }
+                },
+            ]}
+            {...props}
+        />
     )
 }

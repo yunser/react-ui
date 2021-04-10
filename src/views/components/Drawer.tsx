@@ -5,7 +5,7 @@ import { H1, H2, Text, Demo, Code } from '../../ui-doc'
 
 function DrawerDemo() {
 
-    const [ drawerVisible, seetDrawerVisible ] = useState(true)
+    const [ drawerVisible, seetDrawerVisible ] = useState(false)
 
     return (
         <div>

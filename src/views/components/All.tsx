@@ -124,8 +124,12 @@ export default () => {
             ]} />
 
             <H2>数据展示</H2>
-            imagePreviewer
+            
             <ComponentList list={[
+                {
+                    title: 'Article',
+                    url: '/components/article',
+                },
                 {
                     title: 'Avatar',
                     url: '/components/avatar',
@@ -138,7 +142,10 @@ export default () => {
                     title: 'Table',
                     url: '/components/table',
                 },
-
+                {
+                    title: 'ImagePreviewer',
+                    url: '/components/imagePreviewer',
+                },
             ]} />
 
             <H2>表单</H2>

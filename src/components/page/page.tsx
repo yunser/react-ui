@@ -106,6 +106,10 @@ const menus: IMenuItem[] = [
         url: '/components/all'
     },
     {
+        title: 'Layout 布局',
+        url: '/components/layout'
+    },
+    {
         title: 'Switch 开关',
         url: '/components/switch'
     },
@@ -292,6 +296,15 @@ const MenuItem = styled.div`
     padding: 8px 16px;
 `
 
+const MySide = styled.div`
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+`
+
 export function ComponentPage(props: SimplePageProps) {
     
     
@@ -304,19 +317,23 @@ export function ComponentPage(props: SimplePageProps) {
         )
     }
     const side = (
-        <MenuList>
-            {menus.map(SideMenuItem)}
-            {/* <Link to="/components/switch">Switch 开关</Link> */}
-        </MenuList>
+        <MySide>
+            <MenuList>
+                {menus.map(SideMenuItem)}
+                {/* <Link to="/components/switch">Switch 开关</Link> */}
+            </MenuList>
+        </MySide>
     )
     
-    return <SimplePage {...props} side={side}  action={
-        <IconButton href="https://project.yunser.com/products/d0a7c630a55911eaa3824f27432dbf16" target="_blank">
-            <Icon name="help" />
-        </IconButton>
-    }>
-        <Container style={{ padding: 16 }}>
-            {props.children}
-        </Container>
-    </SimplePage>
+    return (
+        <SimplePage {...props} side={side}  action={
+            <IconButton href="https://project.yunser.com/products/d0a7c630a55911eaa3824f27432dbf16" target="_blank">
+                <Icon name="help" />
+            </IconButton>
+        }>
+            <Container style={{ padding: 16 }}>
+                {props.children}
+            </Container>
+        </SimplePage>
+    )
 }

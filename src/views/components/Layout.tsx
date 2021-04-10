@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, IconButton, Icon } from '../../ui'
 import { ComponentPage } from '../../components'
-import { H1, H2, Text, Paragraph, Demo, Code, Display } from '../../ui-doc'
+import { H1, H2, Text, Demo, Code, Display } from '../../ui-doc'
 
 
 function ButtonDemo() {
@@ -20,12 +20,12 @@ function ButtonDemo() {
 export default () => {
 
     return (
-        <ComponentPage title="按钮">
-            <H1>Button 按钮</H1>
+        <ComponentPage title="布局">
+            <H1>Layout 布局</H1>
 
             <H2>Import</H2>
 
-            <Code>{`Import { Button } from '@yunser/react-ui/core'`}
+            <Code>{`Import { Layout } from '@yunser/react-ui/core'`}
             </Code>
 
             <H2>基本</H2>
@@ -36,8 +36,6 @@ export default () => {
             </Demo>
 
             <H2>Icon Button</H2>
-            <Paragraph>图标按钮。</Paragraph>
-
             <Demo>
                 <IconButton>
                     <Icon name="menu" />

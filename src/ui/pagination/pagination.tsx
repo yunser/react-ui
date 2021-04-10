@@ -31,7 +31,7 @@ export function Pagination(props: PaginationProps) {
 
     const items: any[] = []
     items.push('prev')
-    let preArr = []
+    let preArr: any[] = []
     if (page > 1) {
         for (let idx = page - 1; idx >= 1; idx--) {
             preArr.push(idx)
@@ -43,7 +43,7 @@ export function Pagination(props: PaginationProps) {
     }
     items.push(page)
     if (page < totalPage) {
-        let arr = []
+        let arr: any[] = []
         for (let idx = page + 1; idx <= totalPage; idx++) {
             arr.push(idx)
         }

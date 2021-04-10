@@ -6,9 +6,10 @@ interface Column {
     title: string,
     dataKey: string
     key?: string,
+    render?: (value: any, item: any, index: number) => ReactNode,
 }
 
-interface TableProps {
+export interface TableProps {
     children?: ReactNode
     columns?: Column[],
     data?: any[]
@@ -60,7 +61,9 @@ export function Table(props: TableProps) {
                         <Tr key={idx}>
                             {columns.map((column: Column, index) => {
                                 return (
-                                    <Td key={index}>{dataItem[column.dataKey]}</Td>
+                                    <Td key={index}>
+                                        {column.render ? column.render(dataItem[column.dataKey], dataItem, idx) : dataItem[column.dataKey]}
+                                    </Td>
                                 )
                             })}
                         </Tr>
