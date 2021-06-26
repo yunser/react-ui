@@ -19,9 +19,9 @@ export default function Home() {
                 <IconButton href="https://project.yunser.com/products/d0a7c630a55911eaa3824f27432dbf16" target="_blank">
                     <Icon name="help" />
                 </IconButton>
-                <IconButton href="https://project.yunser.com/products/d0a7c630a55911eaa3824f27432dbf16" target="_blank">
+                {/* <IconButton href="https://project.yunser.com/products/d0a7c630a55911eaa3824f27432dbf16" target="_blank">
                     <Icon name="help" />
-                </IconButton>
+                </IconButton> */}
             </React.Fragment>
         }>
             {/* <GlobalStyle /> */}

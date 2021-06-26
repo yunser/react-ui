@@ -293,7 +293,9 @@ const MenuList = styled.div`
 `
 
 const MenuItem = styled.div`
-    padding: 8px 16px;
+    &:hover {
+        background-color: rgba(0, 0, 0, .12);
+    }
 `
 
 const MySide = styled.div`
@@ -311,8 +313,13 @@ export function ComponentPage(props: SimplePageProps) {
     
     function SideMenuItem(item: IMenuItem, index: number) {
         return (
-            <MenuItem key={index}>
-                <Link to={item.url}>{item.title}</Link>
+            <MenuItem data-class="menu-item" key={index}>
+                <Link to={item.url} style={{
+                    display: 'block',
+                    width: '100%',
+                    height: '100%',
+                    padding: '8px 16px',
+                }}>{item.title}</Link>
             </MenuItem>
         )
     }

@@ -10,6 +10,7 @@ export interface LinkProps {
     href?: string
     target?: string
     children?: string | JSX.Element | JSX.Element[]
+    style?: React.CSSProperties | undefined
 }
 
 // const AWrap = styled.a<LinkProps>`
@@ -37,9 +38,14 @@ export interface LinkProps {
 // `
 
 export function Link(props: LinkProps) {
-    const { to, href, target, children, className, ...restProps } = props
+    const { to, href, target, children, className, style, ...restProps } = props
     if (to) {
-        return <ReactLink className={className} to={to} target={target}>{children}</ReactLink>
+        return (
+            <ReactLink
+                className={className} to={to} target={target}
+                style={style}
+            >{children}</ReactLink>
+        )
     }
     return <a className={className} href={href} target={target} {...restProps}>{children}</a>
 }

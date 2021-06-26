@@ -6,7 +6,7 @@ import { Link } from '../ui'
 export default function View(props: any) {
 
     return (
-        <ComponentPage title="首页">
+        <ComponentPage title="Yunser UI">
             <H2>简介</H2>
             <Text>Yunser UI 是一套基于 React 和 Material Design 的 UI 框架。</Text>
 

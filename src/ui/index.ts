@@ -1,3 +1,4 @@
+export * from './view'
 export { Button, IconButton, Fab } from './button'
 export { AppBar } from './appbar'
 export { Checkbox } from './checkbox'

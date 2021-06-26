@@ -6,6 +6,7 @@ const Root = styled.div`
     font-size: 32px;
     text-align: center;
     padding: 160px 0;
+    color: #888;
 `
 
 function Error404() {

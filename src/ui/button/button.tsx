@@ -16,11 +16,38 @@ export interface ButtonProps {
     disabled?: boolean
 }
 
+function buttonTextColor(props) {
+    if (props.disabled) {
+        return 'rgba(0, 0, 0, 0.26)'
+    }
+    // TODO 需要重构
+    if (!props.color) {
+        return '#333'
+    }
+    return '#fff'
+}
+
+export function buttonBgColor(props: any) { // TODO
+    const theme = props.theme
+    if (theme) {
+        console.log('props.color', props.color)
+        const themeType = props.theme.palatte.type === 'light' ? 'light' : 'dark'
+        if (props.color === 'primary') {
+            return theme.palatte.primary[themeType]
+        } else if (props.color === 'secondary') {
+            return theme.palatte.secondary[themeType]
+        } else if (props.color) {
+            return props.color
+        }
+    }
+    return '#fff'
+}
+
 const ButtonWrap = styled.div<ButtonProps>`
     display: inline-block;
     /* border: 1px solid #000; */
-    color: ${props => props.disabled ? 'rgba(0, 0, 0, 0.26)' : '#fff'};
-    background-color: ${props => props.disabled ? 'rgba(0, 0, 0, 0.12)' : propsColor(props)};
+    color: ${props => buttonTextColor(props)};
+    background-color: ${props => props.disabled ? 'rgba(0, 0, 0, 0.12)' : buttonBgColor(props)};
     box-shadow: ${props => props.disabled ? 'none' : propsShadowByKey(props, 'button')};
     /* padding: 10px; */
     padding: 6px 16px;
@@ -63,8 +90,10 @@ const IconButtonWrap = styled.div<ButtonProps>`
         return 20
     }}px; */
     border-radius: 50%;
+    // background-color: #f00;
+    transition: all .2s;
     &:hover {
-        background: ${props => props.theme.type === 'light' ? 'rgba(0, 0, 0, .12)' : 'rgba(255, 255, 255, .12)' };
+        background-color: ${props => props.theme.palatte.type === 'light' ? 'rgba(0, 0, 0, .12)' : 'rgba(255, 255, 255, .12)' };
     }
 
 `
@@ -77,7 +106,7 @@ const IconButtonWrap = styled.div<ButtonProps>`
 
 export const Button = React.forwardRef((props: ButtonProps, ref: any) => { // TODO any
     const { children, ...restProps } = props
-    return <ButtonWrap ref={ref} {...restProps}>{children}</ButtonWrap>
+    return <ButtonWrap data-ui="button.root" ref={ref} {...restProps}>{children}</ButtonWrap>
     // return (
     //   <button ref={ref}>
     //     {props.children}
@@ -89,17 +118,21 @@ export const Button = React.forwardRef((props: ButtonProps, ref: any) => { // TO
 
 export function IconButton(props: ButtonProps) {
     const { children, href, target, onClick } = props
-    return <IconButtonWrap {...props} onClick={() => {
-        // alert('click')
-        if (href) {
-            window.open(href, target)
-            // if (target) {
-            // } else {
-            //     window.open(href) // TODO ?无法编译
-            // }
-        }
-        onClick && onClick()
-    }}>{children}</IconButtonWrap>
+    return (
+        <IconButtonWrap  data-ui="button.root" {...props} onClick={() => {
+            // alert('click')
+            if (href) {
+                window.open(href, target)
+                // if (target) {
+                // } else {
+                //     window.open(href) // TODO ?无法编译
+                // }
+            }
+            onClick && onClick()
+        }}>
+            {children}
+        </IconButtonWrap>
+    )
 }
 
 const FabWrap = styled.div<ButtonProps>`

@@ -9,6 +9,8 @@ const EmptyWrap = styled.div<DividerProps>`
 `
 
 const Text = styled.div`
+    text-align: center;
+    padding: 32px 0;
 `
 
 export function Empty() {

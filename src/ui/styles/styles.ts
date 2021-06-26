@@ -124,7 +124,7 @@ export function propsColor(props: any) { // TODO
             return props.color
         }
     }
-    return '#999'
+    return '#333'
 }
 
 export function propsZIndexByKey(props: any, key: string) { // TODO

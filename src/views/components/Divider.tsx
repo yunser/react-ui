@@ -1,7 +1,7 @@
 import React, { useState, ReactNode } from 'react'
 import { Divider } from '../../ui'
 import { ComponentPage } from '../../components'
-import { H1, H2, Text, Demo, Code } from '../../ui-doc'
+import { H1, H2, Text, Demo, Code, Paragraph } from '../../ui-doc'
 import styled from 'styled-components'
 
 
@@ -219,24 +219,24 @@ export default () => {
 
     return (
         <ComponentPage title="Divider">
-            <SortableList />
+            {/* <SortableList />
             <ResizeRect style={{ width, height }}  />
             <p draggable="true">拖动我!</p>
-            <p draggable="true">可以拖到这里</p>
+            <p draggable="true">可以拖到这里</p> */}
             {/* <LeftRightLayout left={left} right={right} /> */}
-            {/* <H1>Divider</H1>
-            <Text>xxx</Text>
+            <H1>Divider</H1>
+            <Paragraph>分割线，常用来分割内容。</Paragraph>
 
             <H2>Import</H2>
 
-            <Code>{`Import { Divider } from '@yunser/react-ui/core'`}
+            <Code>{`import { Divider } from '@yunser/react-ui'`}
             </Code>
 
-            <H2>基本</H2> */}
+            <H2>基本</H2>
 
-            {/* <Demo>
+            <Demo>
                 <DividerDemo />
-            </Demo> */}
+            </Demo>
         </ComponentPage>
     )
 }

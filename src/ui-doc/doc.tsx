@@ -33,11 +33,11 @@ export const Text = styled.div`
 `
 
 
-interface PProps {
+interface ParagraphProps {
     children: ReactNode
 }
 
-export function Paragraph(props: PProps) {
+export function Paragraph(props: ParagraphProps) {
     const { children } = props
     return (
         <p data-ui="p" style={{
@@ -45,6 +45,21 @@ export function Paragraph(props: PProps) {
             marginBottom: 16,
             fontSize: 16,
         }}>{children}</p>
+    )
+}
+
+interface ArtilceTitleProps {
+    children: ReactNode
+}
+
+export function ArtilceTitle(props: ArtilceTitleProps) {
+    const { children } = props
+    return (
+        <h1 data-ui="title" style={{
+            marginTop: 0,
+            marginBottom: 16,
+            fontSize: 16,
+        }}>{children}</h1>
     )
 }
 
